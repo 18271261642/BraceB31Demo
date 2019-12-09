@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/comment_title_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/htLin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF307E"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+
+        <include layout="@layout/include_date_switch_layout" />
+
+        <com.brace.android.b31.view.widget.BraceCusHeartView
+            android:id="@+id/cusHeartDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_180"
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_marginRight="@dimen/size_10"
+            app:pointColor="@color/white"
+            app:radioStroke="@dimen/size_3"
+            app:recfColor="#DAEDF3"
+            app:timeStroke="@dimen/sp_8" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/htDetailTv"
+        app:layout_constraintTop_toBottomOf="@+id/htLin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/chang_white"
+        android:padding="@dimen/size_5"
+        android:paddingLeft="10dp"
+        android:text="@string/string_heart_detail"
+        android:textColor="@color/contents_text"
+        android:textSize="20sp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/heartDetailRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/htDetailTv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

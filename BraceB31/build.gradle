@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'maven'
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions{
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:design:28.0.0'
+    implementation files('libs/vpbluetooth_1.0.3.jar')
+    implementation files('libs/vpprotocol_2.1.21.15.jar')
+    implementation 'com.android.support:multidex:1.0.3'
+    //litePal数据库
+    implementation 'org.litepal.android:java:3.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation files('libs/commons-lang-2.5.jar')
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
+
+    //glide库
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation(name: 'MPChartLib', ext: 'aar')
+
+
+}
+
+
+
+//publish {
+//    userOrg = 'sunjianhua' //bintray注册的用户名（不是邮箱）
+//    groupId = 'com.brace.android'
+//    artifactId = 'b31' //项目名称
+//    publishVersion = '1.0.0' //版本号
+//    desc = 'This is the desc' //项目描述。可空。
+//    website = '' //项目地址，一般填github地址。可空。
+//}
+

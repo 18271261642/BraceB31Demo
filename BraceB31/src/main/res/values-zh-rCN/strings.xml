@@ -1,0 +1,206 @@
+<resources>
+
+
+    <string name="app_name">BraceB31Project</string>
+
+
+    <string name="string_max_steps">最大步数:</string>
+    <string name="step_number">步数</string>
+    <string name="steps">步</string>
+    <string name="target_step">目标步数</string>
+    <string name="heart_rate">心率</string>
+    <string name="string_sleep">睡眠</string>
+    <string name="string_blood">血压</string>
+    <string name="string_device">设备</string>
+    <string name="string_heart_detail">心率详情</string>
+    <string name="string_sleep_detail">睡眠详情</string>
+    <string name="string_precision_sleep">精准睡眠</string>
+    <string name="string_blood_detail">血压详情</string>
+    <string name="settings_success">设置成功</string>
+    <string name="settings_fail">设置失败</string>
+    <string name="string_device_no_conn">设备未连接</string>
+    <string name="cancle">取消</string>
+    <string name="confirm">确定</string>
+
+    <string name="string_other">其它</string>
+    <string name="string_wechat">微信</string>
+    <string name="string_recent">最近</string>
+
+    <string name="title_activity_brace_home">BraceHomeActivity</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">设备</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="nodata">无数据</string>
+    <string name="string_move_ment">运动</string>
+    <string name="string_steps_target">运动目标</string>
+    <string name="string_sleep_target">睡眠目标</string>
+    <string name="string_information_reminder">信息提醒</string>
+    <string name="string_turning_wrist_screen">转腕亮屏</string>
+    <string name="string_blood_pressure_mode">血压私人模式</string>
+    <string name="string_switch_setting">开关设置</string>
+    <string name="string_take_photo">拍照</string>
+    <string name="string_reset_device_password">重置设备密码</string>
+    <string name="string_firmware_update">固件更新</string>
+    <string name="string_clear_data">清除数据</string>
+    <string name="string_clock_setting">闹钟设置</string>
+    <string name="new_alarm_clock">新建闹钟</string>
+    <string name="edit_alarm_clock">编辑闹钟</string>
+    <string name="string_turn_wrist_switch">转腕开关</string>
+    <string name="string_sedentary_setting">久坐设置</string>
+    <string name="string_equipment_reminding">设备提醒</string>
+    <string name="string_unit_setting">单位设置</string>
+    <string name="string_choose_unit">选择单位</string>
+    <string name="string_factory_setting">恢复出厂</string>
+    <string name="count_down">倒计时</string>
+    <string name="string_devices_ui">界面风格设置</string>
+    <string name="smart_watch_noti">手环通知</string>
+    <string name="app_firm_version">固件版本</string>
+    <string name="string_mores">更多</string>
+    <string name="menu_settings">设置</string>
+    <string name="notice_str">通知</string>
+    <string name="string_devices_disconnected">断开连接</string>
+    <string name="string_devices_is_disconnected">是否断开连接？</string>
+    <string name="string_sleep_time">睡眠时长</string>
+
+    <string name="sleep_deep">深睡</string>
+    <string name="sleep_light">浅睡</string>
+    <string name="long_when">时长</string>
+    <string name="sleep_asleep">入睡时间</string>
+    <string name="string_sleep_awake">苏醒</string>
+    <string name="string_recovery_count">苏醒次数</string>
+    <string name="string_recovery_time">苏醒时间</string>
+    <string name="waking_state">清醒状态</string>
+    <string name="string_shallow_sleep">浅度睡眠</string>
+    <string name="string_deep_sleep">深度睡眠</string>
+    <string name="string_sleep_insomnia">失眠</string>
+    
+    
+    <string name="sedentaryreminder">久坐提醒</string>
+    <string name="end_time">结束时间</string>
+    <string name="start_time">开始时间</string>
+    <string name="string_reminding_times">提醒间隔</string>
+    <string name="string_wrist_sensitivity">转腕灵敏度</string>
+    <string name="string_recommend">推荐</string>
+
+    <string name="string_wearing_test">佩戴检测</string>
+    <string name="string_is_24_hour">24小时制</string>
+    <string name="string_auto_blood_pressure">心率自动检测</string>
+    <string name="string_auto_heart">血压自动检测</string>
+    <string name="string_find_phone">查找手机</string>
+    <string name="string_stopwatch_function">秒表功能</string>
+    <string name="string_disconnection_reminder">断连提醒</string>
+    <string name="string_bp_night_spo2_check">血氧夜间检测</string>
+
+    <string name="monday">周一</string>
+    <string name="tuesday">周二</string>
+    <string name="wednesday">周三</string>
+    <string name="thursday">周四</string>
+    <string name="friday">周五</string>
+    <string name="saturday">周六</string>
+    <string name="sunday">周日</string>
+    <string name="repeat_once">只响一次</string>
+
+    <string name="time">时间</string>
+    <string name="repeat">重复</string>
+    <string name="string_long_time">延时提醒</string>
+    <string name="string_add_new_reminder">添加新的提醒</string>
+    <string name="string_alarm_type">闹钟类型</string>
+    <string name="save">保存</string>
+
+
+    <string name="show_on_screen">界面显示</string>
+    <string name="common_time">常用时间</string>
+    <string name="count_douwn_desc">备注 \n 1,界面显示开启，设备端才能单独使用计时功能。\n 2,设备端单独使用时，计时时长为常用时长。
+        \n 3,设备单独使用计时功能时，在计时界面长按3秒开始。\n 4,倒计时开始后，在计时界面长按3秒结束计时。</string>
+
+    <string name="star">开始</string>
+    <string name="week">星期</string>
+    <string name="select_repeat_week">请选择重复星期</string>
+    <string name="deleda">确定要删除?</string>
+
+    <string name="string_init_device_password">初始密码0000</string>
+    <string name="string_writ_old_password">请输入旧密码</string>
+    <string name="string_writ_new_device_password">请输入新密码</string>
+    <string name="string_reset_password_successfully">重置密码成功</string>
+    <string name="string_old_password_incorrect">旧密码不正确</string>
+    <string name="string_two_passwords_are_different">两次密码不相同</string>
+    <string name="input_new_password">请输入4位新密码</string>
+
+    <string name="bloodpressure_msg1">请选择私人血压模式数据，私人血压模式只针对个人有效，他人请选择通用模式</string>
+    <string name="private_blood_val">您的私人血压：</string>
+    <string name="bloodpressure_msg">设置您的私人血压模式，以获取更精确的数据，此处你需要设置的是未服用降压药的有效血压值.</string>
+
+    <string name="notif_messge">消息提醒需打开通知使用权或者辅助权限</string>
+    <string name="open_notif">打开通知权限</string>
+
+    <string name="string_new_phone">电话</string>
+    <string name="string_new_messege">短信</string>
+
+
+
+
+
+    <string name="vpspo2h_sleep_sportvalue">睡眠活动幅度</string>
+    <string name="vpspo2h_breath_break">呼吸暂停综合征</string>
+    <string name="vpspo2h_ratevaraive">脉率变异性</string>
+    <string name="vpspo2h_spo2h">血氧</string>
+    <string name="vpspo2h_low_remain">低氧唤醒</string>
+    <string name="ave_value">平均值</string>
+    <string name="heart_health_sorce">心脏健康指数</string>
+    <string name="analysis_result">分析结果（仅供参考）</string>
+    <string name="spo2_breath_break">血氧/呼吸暂停</string>
+    <string name="spo2_main_sorce">主要指标</string>
+    <string name="more">更多</string>
+    <string name="pack_up">收起</string>
+    <string name="name">名称</string>
+    <string name="frequent_time">频现时间</string>
+    <string name="times">次数</string>
+    <string name="reference">参考值</string>
+    <string name="max_min">最高(最低)</string>
+    <string name="intervention_measures">干预手段</string>
+    <string name="vpspo2h_state_realtime">实时血氧</string>
+    <string name="vpspo2h_state_breathbreak">呼吸暂停</string>
+    <string name="vpspo2h_state_calm">安静</string>
+    <string name="vpspo2h_state_error">异常</string>
+    <string name="vpspo2h_state_little">轻度</string>
+    <string name="vpspo2h_state_mulmulsport">躁动</string>
+    <string name="vpspo2h_state_mulsport">多动</string>
+    <string name="vpspo2h_state_normal">正常</string>
+    <string name="vpspo2h_toptitle_breath">呼吸率</string>
+    <string name="vpspo2h_toptitle_heart">心脏负荷</string>
+    <string name="vpspo2h_toptitle_lowspo2h">低氧时间</string>
+    <string name="vpspo2h_toptitle_sleep">睡眠活动</string>
+    <string name="lero_referenc">洛伦兹散点图参考</string>
+    <string name="hrv_data">HRV数据</string>
+    <string name="spo2_test">血氧测试</string>
+    <string name="spo2_calibration_pro">校准进度</string>
+    <string name="fatigue_test">疲劳度测试</string>
+    <string name="fatigue_no_test_desc">适当的关注一下自己的身体状态哦</string>
+    <string name="test_invalid">测试无效</string>
+    <string name="mild_fait">轻度疲劳</string>
+    <string name="general_fait">一般疲劳</string>
+    <string name="weight_fait">重度疲劳</string>
+    <string name="severe">重度</string>
+    <string name="moderate">中度</string>
+    <string name="common_sense_of_apnea">呼吸暂停常识</string>
+    <string name="max_value">最大值</string>
+    <string name="min_value">最小值</string>
+    <string name="signle_minute">分</string>
+    <string name="second">秒</string>
+    <string name="time_area">时间区间</string>
+    <string name="accumulate">累加值</string>
+
+    <string name="connted">已连接</string>
+    <string name="disconnted">已断开</string>
+    <string name="cishu">次</string>
+    <string name="data">数据</string>
+
+    <string name="string_default_style">默认风格</string>
+    <string name="style_position">风格</string>
+
+    
+    <string name="string_metric">公制</string>
+    <string name="string_imperil">英制</string>
+
+</resources>

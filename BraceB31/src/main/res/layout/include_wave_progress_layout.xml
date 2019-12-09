@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/appThemeColor"
+    android:paddingBottom="20dp"
+    android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:id="@+id/waveProgressFl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center">
+
+            <com.brace.android.b31.view.widget.WaveProgress
+                android:id="@+id/b31ProgressBar"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                app:darkWaveAnimTime="3000"
+                app:darkWaveColor="#1ebae3"
+                app:lightWaveAnimTime="4000"
+                app:lightWaveColor="#34c7e7"
+                app:lightWaveDirect="R2L"
+                app:lockWave="false"
+                app:valueColor="@color/white"
+                app:valueSize="45sp"
+                app:waveHeight="10dp"
+                app:waveNum="1" />
+
+
+            <ImageView
+                android:layout_width="270dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/icon_record_circule_luminous" />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/waveProgressFl"
+            android:id="@+id/goalStepTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="1111"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,206 @@
+<resources>
+
+
+    <string name="app_name">BraceB31Project</string>
+
+
+    <string name="string_max_steps">Max steps:</string>
+    <string name="step_number">Steps</string>
+    <string name="steps">step</string>
+    <string name="target_step">Target steps</string>
+    <string name="heart_rate">Heart rate</string>
+    <string name="string_sleep">sleep</string>
+    <string name="string_blood">blood pressure</string>
+    <string name="string_device">device</string>
+    <string name="string_heart_detail">Heart rate details</string>
+    <string name="string_sleep_detail">Sleep details</string>
+    <string name="string_precision_sleep">Precise sleep</string>
+    <string name="string_blood_detail">Blood pressure details</string>
+    <string name="settings_success">Setup succeeded</string>
+    <string name="settings_fail">Setting failed</string>
+    <string name="string_device_no_conn">The device is not connected</string>
+    <string name="cancle">Cancel</string>
+    <string name="confirm">OK</string>
+
+    <string name="string_other">Other</string>
+    <string name="string_wechat">WeChat</string>
+    <string name="string_recent">Recent</string>
+
+    <string name="title_activity_brace_home">BraceHomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Device</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="nodata">No Data</string>
+    <string name="string_move_ment">Sports</string>
+    <string name="string_steps_target">moving target</string>
+    <string name="string_sleep_target">sleep target</string>
+    <string name="string_information_reminder">Information Reminder</string>
+    <string name="string_turning_wrist_screen">Turn your wrist on screen</string>
+    <string name="string_blood_pressure_mode">Private blood pressure mode</string>
+    <string name="string_switch_setting">Switch settings</string>
+    <string name="string_take_photo">Take a photo</string>
+    <string name="string_reset_device_password">Reset device password</string>
+    <string name="string_firmware_update">Firmware update</string>
+    <string name="string_clear_data">Clear data</string>
+    <string name="string_clock_setting">Alarm clock settings</string>
+    <string name="new_alarm_clock">New alarm</string>
+    <string name="edit_alarm_clock">Edit alarm</string>
+    <string name="string_turn_wrist_switch">Turn wrist switch</string>
+    <string name="string_sedentary_setting">Sedentary Settings</string>
+    <string name="string_equipment_reminding">Device reminder</string>
+    <string name="string_unit_setting">Unit settings</string>
+    <string name="string_choose_unit">Select a unit</string>
+    <string name="string_factory_setting">Restore factory</string>
+    <string name="count_down">Countdown</string>
+    <string name="string_devices_ui">Interface style settings</string>
+    <string name="smart_watch_noti">Bracelet notifications</string>
+    <string name="app_firm_version">Firmware version</string>
+    <string name="string_mores">more</string>
+    <string name="menu_settings">Settings</string>
+    <string name="notice_str">Notifications</string>
+    <string name="string_devices_disconnected">Disconnected</string>
+    <string name="string_devices_is_disconnected">Disconnected？</string>
+    <string name="string_sleep_time">sleep time</string>
+
+    <string name="sleep_deep">Deep sleep</string>
+    <string name="sleep_light">Light sleep</string>
+    <string name="long_when">Duration</string>
+    <string name="sleep_asleep">sleep time</string>
+    <string name="string_sleep_awake">awake</string>
+    <string name="string_recovery_count">awake count</string>
+    <string name="string_recovery_time">awake time</string>
+    <string name="waking_state">awake state</string>
+    <string name="string_shallow_sleep">Light sleep</string>
+    <string name="string_deep_sleep">Deep sleep</string>
+    <string name="string_sleep_insomnia">Insomnia</string>
+    
+    
+    <string name="sedentaryreminder">Sedentary reminders</string>
+    <string name="end_time">end time</string>
+    <string name="start_time">start time</string>
+    <string name="string_reminding_times">Reminder intervals</string>
+    <string name="string_wrist_sensitivity">Wrist sensitivity</string>
+    <string name="string_recommend">Recommended</string>
+
+    <string name="string_wearing_test">Wear Detection</string>
+    <string name="string_is_24_hour">24 hour</string>
+    <string name="string_auto_blood_pressure">Automatic heart rate detection </string>
+    <string name="string_auto_heart">Automatic blood pressure detection </string>
+    <string name="string_find_phone">Find phone</string>
+    <string name="string_stopwatch_function">Stopwatch function</string>
+    <string name="string_disconnection_reminder">Disconnection reminder</string>
+    <string name="string_bp_night_spo2_check">Blood oxygen night detection</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="repeat_once">Only once</string>
+
+    <string name="time">time</string>
+    <string name="repeat">Repeat</string>
+    <string name="string_long_time">Delayed reminders</string>
+    <string name="string_add_new_reminder">Add new reminder</string>
+    <string name="string_alarm_type">Alarm type</string>
+    <string name="save">Save </string>
+
+
+    <string name="show_on_screen">Interface display</string>
+    <string name="common_time">Common time</string>
+    <string name="count_douwn_desc">Remarks \n 1, The interface display is enabled, and the device can only use the timing function. \n 2, When the device is used alone, the timing time is the common time.
+        \n 3, When the device uses the timing function alone, press and hold in the timing interface for 3 seconds to start. \n 4, After the countdown starts, press and hold on the timing interface for 3 seconds to end the timing</string>
+
+    <string name="star">Start</string>
+    <string name="week">week</string>
+    <string name="select_repeat_week">Please select repeating week</string>
+    <string name="deleda">Are you sure you want to delete?</string>
+
+    <string name="string_init_device_password">Initial password 0000</string>
+    <string name="string_writ_old_password">Please enter your old password</string>
+    <string name="string_writ_new_device_password">Please enter a new password</string>
+    <string name="string_reset_password_successfully">The password was successfully reset</string>
+    <string name="string_old_password_incorrect">The old password is incorrect</string>
+    <string name="string_two_passwords_are_different">The passwords are different twice</string>
+    <string name="input_new_password">Please enter a 4-digit new password</string>
+
+    <string name="bloodpressure_msg1">Please select the private blood pressure mode data, the private blood pressure mode is only valid for individuals, others please select the general mode</string>
+    <string name="private_blood_val">Your private blood pressure：</string>
+    <string name="bloodpressure_msg">Set your personal blood pressure mode to get more accurate data, here you need to set the effective blood pressure value without taking antihypertensive drugs.</string>
+
+    <string name="notif_messge">Message reminders need to turn on notification usage rights or auxiliary permissions</string>
+    <string name="open_notif">Open notification permissions</string>
+
+    <string name="string_new_phone">Phone</string>
+    <string name="string_new_messege">SMS</string>
+
+
+
+
+
+    <string name="vpspo2h_sleep_sportvalue">Range of sleeping activity</string>
+    <string name="vpspo2h_breath_break">Obstructive sleep apnea syndrome</string>
+    <string name="vpspo2h_ratevaraive">Pulse rate variability</string>
+    <string name="vpspo2h_spo2h">Blood oxygen</string>
+    <string name="vpspo2h_low_remain">Hypoxia and arousal</string>
+    <string name="ave_value">average value</string>
+    <string name="heart_health_sorce">Heart health index</string>
+    <string name="analysis_result">Analytic result(For reference only)</string>
+    <string name="spo2_breath_break">Blood oxygen/Apnea</string>
+    <string name="spo2_main_sorce">Key indicators</string>
+    <string name="more">More</string>
+    <string name="pack_up">Pack Up</string>
+    <string name="name">Name</string>
+    <string name="frequent_time">Frequently appearing time</string>
+    <string name="times">Frequency</string>
+    <string name="reference">Reference value</string>
+    <string name="max_min">Max(Min)</string>
+    <string name="intervention_measures">Intervention measures</string>
+    <string name="vpspo2h_state_realtime">Real-time blood oxygen</string>
+    <string name="vpspo2h_state_breathbreak">Apnea</string>
+    <string name="vpspo2h_state_calm">Mild</string>
+    <string name="vpspo2h_state_error">Abnormal</string>
+    <string name="vpspo2h_state_little">Silent</string>
+    <string name="vpspo2h_state_mulmulsport">Dysphoria</string>
+    <string name="vpspo2h_state_mulsport">Hyperaction</string>
+    <string name="vpspo2h_state_normal">Normal</string>
+    <string name="vpspo2h_toptitle_breath">Respiratory</string>
+    <string name="vpspo2h_toptitle_heart">Cardiac load</string>
+    <string name="vpspo2h_toptitle_lowspo2h">Hypoxia time</string>
+    <string name="vpspo2h_toptitle_sleep">Sleeping activity</string>
+    <string name="lero_referenc">Reference of Lorentz scatter diagram</string>
+    <string name="hrv_data">HRV data</string>
+    <string name="spo2_test">SpO2 test</string>
+    <string name="spo2_calibration_pro">Calibration progress</string>
+    <string name="fatigue_test">Fatigue test</string>
+    <string name="fatigue_no_test_desc">Appropriate attention their physical condition oh!</string>
+    <string name="test_invalid">Invalid test</string>
+    <string name="mild_fait">Mild fatigue</string>
+    <string name="general_fait">General fatigue</string>
+    <string name="weight_fait">Severe fatigue</string>
+    <string name="severe">Severe</string>
+    <string name="moderate">Moderate</string>
+    <string name="common_sense_of_apnea">Common sense of apnea</string>
+    <string name="max_value">Maximum</string>
+    <string name="min_value">Minimum</string>
+    <string name="signle_minute">min</string>
+    <string name="second">second</string>
+    <string name="time_area">Time</string>
+    <string name="accumulate">Accumulated value</string>
+
+    <string name="connted">Connected</string>
+    <string name="disconnted">Disconnected</string>
+    <string name="cishu">times</string>
+    <string name="data">data</string>
+
+    <string name="string_default_style">Default style</string>
+    <string name="style_position">Style</string>
+
+    
+    <string name="string_metric">Metric</string>
+    <string name="string_imperil">Imperial</string>
+
+</resources>

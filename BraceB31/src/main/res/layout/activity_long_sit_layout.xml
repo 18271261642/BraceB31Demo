@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	
+    <include
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/comment_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+
+        <RelativeLayout
+            app:layout_constraintBottom_toTopOf="@+id/commTitleLayout"
+            android:id="@+id/longSitSwitchRel"
+            style="@style/B30DeviceRelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+            <TextView
+                style="@style/B30DeviceStyle"
+                android:text="@string/sedentaryreminder" />
+
+
+            <ToggleButton
+                android:id="@+id/longSitToggleBtn"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@+id/bs1img"
+                android:background="@drawable/toggle_select"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+
+            <ImageView
+                android:id="@+id/bs1img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fgm_fitness_arrow_left" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/longSitView1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/chang_white"
+            app:layout_constraintTop_toBottomOf="@+id/longSitSwitchRel" />
+
+
+        <RelativeLayout
+            android:id="@+id/b31LongSitStartRel"
+            style="@style/B30DeviceRelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/longSitView1">
+
+
+            <TextView
+                style="@style/B30DeviceStyle"
+                android:text="@string/start_time" />
+
+
+            <TextView
+                android:id="@+id/showB31LongSitStartTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/ig1"
+                android:text="" />
+
+
+            <ImageView
+                android:id="@+id/ig1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fgm_fitness_arrow_left" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/longSitView2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/chang_white"
+            app:layout_constraintTop_toBottomOf="@+id/b31LongSitStartRel" />
+
+
+        <RelativeLayout
+            android:id="@+id/b31LongSitEndRel"
+            style="@style/B30DeviceRelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/longSitView2">
+
+
+            <TextView
+                style="@style/B30DeviceStyle"
+                android:text="@string/end_time" />
+
+
+            <TextView
+                android:id="@+id/showB30LongSitEndTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/ig2"
+                android:text="" />
+
+
+            <ImageView
+                android:id="@+id/ig2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fgm_fitness_arrow_left" />
+
+        </RelativeLayout>
+
+        <View
+            app:layout_constraintTop_toBottomOf="@+id/b31LongSitEndRel"
+            android:id="@+id/longSitView3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/chang_white" />
+
+        <RelativeLayout
+            android:id="@+id/b31LongSitTimeRel"
+            style="@style/B30DeviceRelStyle"
+            app:layout_constraintTop_toBottomOf="@+id/longSitView3">
+
+
+            <TextView
+                style="@style/B30DeviceStyle"
+                android:text="@string/string_reminding_times" />
+
+
+            <TextView
+                android:id="@+id/showB31LongSitTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/ig3"
+                android:text="" />
+
+
+            <ImageView
+                android:id="@+id/ig3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fgm_fitness_arrow_left" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/longSitView4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/chang_white"
+            app:layout_constraintTop_toBottomOf="@+id/b31LongSitTimeRel" />
+
+
+        <Button
+            android:id="@+id/b31LongSitSaveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_select_layout"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/longSitView4" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

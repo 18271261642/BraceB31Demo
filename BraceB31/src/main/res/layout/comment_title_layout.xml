@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/commTitleLayout"
+    style="@style/ClubToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    android:background="@color/appThemeColor">
+
+	
+	
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/commentackImg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@mipmap/backs"
+            android:visibility="invisible" />
+
+
+        <TextView
+            android:id="@+id/commentTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="这是标题"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+
+        <ImageView
+            android:id="@+id/commentShareImg"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_10"
+            android:src="@mipmap/record_share"
+            android:visibility="invisible"/>
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/save_text"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="保存"/>
+    </RelativeLayout>
+
+
+</android.support.v7.widget.Toolbar>

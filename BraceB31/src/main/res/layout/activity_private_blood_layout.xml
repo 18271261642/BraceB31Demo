@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/comment_title_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/B30DeviceRelStyle"
+                android:background="@drawable/square_white_btn_change">
+
+
+
+                <TextView
+                    style="@style/B30DeviceStyle"
+                    android:layout_toRightOf="@+id/img6"
+                    android:text="@string/string_blood_pressure_mode" />
+
+
+                <ToggleButton
+                    android:id="@+id/privateBloadToggleBtn"
+                    android:layout_width="@dimen/size_70"
+                    android:layout_height="@dimen/size_40"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_15"
+                   android:layout_alignParentRight="true"
+                    android:background="@drawable/toggle_select"
+                    android:textOff="@null"
+                    android:textOn="@null" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1"
+                android:background="@color/chang_white" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:padding="3dp"
+                android:text="@string/bloodpressure_msg"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="15dp"
+                android:padding="3dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/bloodpressure_msg1"
+                android:layout_height="wrap_content" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"/>
+
+                <com.brace.android.b31.view.widget.StringScrollPicker
+                    android:id="@+id/hightBloadView"
+                    android:layout_width="80dp"
+                    android:layout_height="200dp"
+                    app:spv_disallow_intercept_touch="true"
+                    app:spv_max_text_size="30dp"
+                    app:spv_min_text_size="24dp"
+                    app:spv_visible_item_count="5"/>
+
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"/>
+
+
+
+                <com.brace.android.b31.view.widget.StringScrollPicker
+                    android:id="@+id/lowBloadView"
+                    android:layout_width="80dp"
+                    android:layout_height="200dp"
+                    app:spv_disallow_intercept_touch="true"
+                    app:spv_max_text_size="30dp"
+                    app:spv_min_text_size="24dp"
+                    app:spv_visible_item_count="5"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+
+
+                <TextView
+                    android:text="@string/private_blood_val"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/bloodValueTv"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content" />
+
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/b30SetPrivateBloadBtn"
+                android:layout_width="match_parent"
+                android:text="@string/save"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_select_layout"
+                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

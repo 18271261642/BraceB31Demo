@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/comment_title_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+           <TextView
+               android:layout_gravity="center"
+               android:gravity="center"
+               android:padding="8dp"
+               android:textSize="18sp"
+               android:textColor="@color/black"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="默认密码为:0000"/>
+
+            <EditText
+                android:id="@+id/resetPwdOldPwdEdit"
+                android:layout_marginTop="@dimen/size_25"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_height="wrap_content"
+                android:hint="输入旧密码"
+                android:background="@null"/>
+
+
+            <EditText
+                android:id="@+id/resetPwdNewPwdEdit"
+                android:layout_marginTop="@dimen/size_10"
+                android:padding="8dp"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入新密码"
+                android:background="@null"/>
+
+
+            <EditText
+                android:id="@+id/resetPwdAgainNewPwdEdit"
+                android:layout_marginTop="@dimen/size_10"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="再次输入新密码"
+                android:background="@null"/>
+
+
+            <Button
+                android:id="@+id/resetPwdBtn"
+                android:layout_marginTop="@dimen/size_20"
+                android:layout_margin="@dimen/size_15"
+                android:background="@drawable/btn_select_layout"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

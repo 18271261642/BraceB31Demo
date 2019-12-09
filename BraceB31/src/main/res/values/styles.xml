@@ -1,0 +1,207 @@
+<resources>
+
+
+
+    <!-- Base application theme. -->
+    <style name="BraceAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+
+
+    <!-- B30设备页面字体样式-->
+    <style name="B30DeviceStyle">
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#1C1C1C</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--布局样式 -->
+    <style name="B30DeviceRelStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+
+    <!--睡眠星星的style-->
+    <style name="CusSleepRatingBar" parent="Base.Widget.AppCompat.RatingBar">
+        <!--修改默认图片-->
+        <item name="android:progressDrawable">@drawable/sleepbar</item>
+        <!--修改默认大小-->
+        <item name="android:minHeight">18dp</item>
+        <item name="android:maxHeight">50dp</item>
+
+    </style>
+    <!--睡眠星星的style-->
+    <style name="CusHRVRatingBar" parent="Base.Widget.AppCompat.RatingBar">
+        <!--修改默认图片-->
+        <item name="android:progressDrawable">@drawable/ic_hrv_desc</item>
+        <!--修改默认大小-->
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxHeight">50dp</item>
+
+    </style>
+
+
+    <style name="B31STvDescStyle">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">#141828</item>
+
+    </style>
+
+
+    <style name="B31STvStyle">
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">3dp</item>
+
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+
+    <!--Toggle的样式-->
+    <style name="B30MsgToggleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/toggle_select</item>
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="B30ToggTxtStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/size_15</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/size_5</item>
+        <item name="android:textColor">#1C1C1C</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+
+    <!--血氧相关样式-->
+    <!--块内容样式-->
+    <style name="style_block">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--块内容中头部的标题样式，标题中包含(最左边的文本以及最右边的图片)-->
+    <style name="style_block_toptitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <!--块内容中头部标题最左边的文本样式-->
+    <style name="style_block_toptitle_tv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!--块内容中头部标题中最右边的图片样式-->
+    <style name="style_block_toptitle_img">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:src">@drawable/vpspo2h_list_img</item>
+    </style>
+
+    <!--块内容中底部左侧状态样式，对应(轻度，安静....)-->
+    <style name="style_block_bottom_state_left">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <!--块内容中底部中间状态样式，对应(正常，多动....)-->
+    <style name="style_block_bottom_state_middle" parent="style_block_bottom_state_left">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--块内容中底部右侧状态样式，对应(异常，躁动....)-->
+    <style name="style_block_bottom_state_right" parent="style_block_bottom_state_left">
+        <item name="android:gravity">right</item>
+    </style>
+    <!--块内容中底部状态样式中圆点样式-->
+    <style name="style_block_bottom_state_dot">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:text">●</item>
+    </style>
+    <!--块内容中底部状态样式中文本样式，对应（轻度，安静，正常，多动，异常，躁动...）-->
+    <style name="style_block_bottom_state_tv" parent="style_block_bottom_state_dot">
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!--块内容中底部的Tip样式，对应（[0-20]轻度 ....）-->
+    <style name="style_block_bottom_tip">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">23dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@drawable/vpspo2h_block_tip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+
+    <declare-styleable name="CusRateTextView">
+        <attr name="cus_tv_degree" format="integer"/>
+    </declare-styleable>
+
+    <style name="FadeInPopWin">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowEnterAnimation">@anim/pop_win_content_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_win_content_fade_out</item>
+    </style>
+
+</resources>

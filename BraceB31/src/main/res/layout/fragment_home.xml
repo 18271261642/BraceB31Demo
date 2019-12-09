@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/comment_title_layout"/>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout"
+        android:id="@+id/inviView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <android.support.v4.widget.NestedScrollView
+        app:layout_constraintTop_toBottomOf="@+id/inviView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        android:layout_width="0dp"
+        android:layout_marginBottom="61dp"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+           <include layout="@layout/include_wave_progress_layout"/>
+
+
+            <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:id="@+id/homeConnStatusTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/contents_text"
+                    android:background="@color/chang_white"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/homeDeviceMacTTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+
+            <include layout="@layout/include_layout_step_layout"/>
+
+
+            <include layout="@layout/include_b30_heart_chart"/>
+
+
+            <include layout="@layout/include_b30_sleep_view_layout"/>
+
+
+            <include layout="@layout/include_b30_blood_chart"/>
+
+            <include layout="@layout/include_b31_home_bpoxy_layout"/>
+
+            <include layout="@layout/inclue_b31_home_hrv_layout"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

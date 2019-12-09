@@ -1,0 +1,2 @@
+include ':app', ':BraceB31'
+rootProject.name='BraceB31Demo'

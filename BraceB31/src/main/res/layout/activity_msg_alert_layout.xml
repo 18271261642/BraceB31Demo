@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/comment_title_layout" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#ee3a8c"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/notif_messge"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:id="@+id/msgOpenNitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_white_select"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/ic_msg_open_noti" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_15"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:text="@string/open_notif"
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="@dimen/size_15"
+                    android:src="@drawable/fgm_fitness_arrow_left" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/size_5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_skype" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Skype" />
+
+                <ToggleButton
+                    android:id="@+id/b31SkypeTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_whatsapp" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="WhatsApp" />
+
+                <ToggleButton
+                    android:id="@+id/b31WhatsAppTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_facebook" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Facebook" />
+
+                <ToggleButton
+                    android:id="@+id/b31FacebookTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_linked" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="LinkendIn" />
+
+                <ToggleButton
+                    android:id="@+id/b31LinkedTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_twitter" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Twitter" />
+
+                <ToggleButton
+                    android:id="@+id/b31TwitterTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_viber" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Viber" />
+
+                <ToggleButton
+                    android:id="@+id/b31ViberTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_line" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="LINE" />
+
+                <ToggleButton
+                    android:id="@+id/b31LineTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_snap" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Snapchart" />
+
+                <ToggleButton
+                    android:id="@+id/b31SnapchartTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_instagram" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Instagram" />
+
+                <ToggleButton
+                    android:id="@+id/b31InstagramTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:id="@+id/google_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_gmail" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="Gmail" />
+
+                <ToggleButton
+                    android:id="@+id/b31GmailTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/google_gmail_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_wechat" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="@string/string_wechat" />
+
+                <ToggleButton
+                    android:id="@+id/b31WechatTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_qq" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="QQ" />
+
+                <ToggleButton
+                    android:id="@+id/b31QQTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_msg" />
+
+                <TextView
+
+                    style="@style/B30ToggTxtStyle"
+                    android:text="@string/string_new_messege" />
+
+                <ToggleButton
+                    android:id="@+id/b31MessageTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/size_20"
+                android:background="#dddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_phone" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="@string/string_new_phone" />
+
+                <ToggleButton
+                    android:id="@+id/b31PhoneTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#dddddd" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_5"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_5"
+                    android:src="@mipmap/icon_msg_other" />
+
+                <TextView
+                    style="@style/B30ToggTxtStyle"
+                    android:text="@string/string_other" />
+
+                <ToggleButton
+                    android:id="@+id/b31OhterTogg"
+                    style="@style/B30MsgToggleStyle" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#dddddd" />
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

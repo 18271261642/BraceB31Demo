@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="btn_cancel_color">#999999</color>
+    <color name="black">#000000</color>
+    <color name="select_txt">#009900</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- 实用工具 -->
+    <color name="contents_text">#ff000000</color>
+
+    <color name="red">#FF0000</color> <!-- 红色 -->
+    <color name="blue">#0000FF</color> <!-- 蓝色 -->
+
+    <color name="layout_back">#f2f2f2</color>
+
+
+    <color name="appThemeColor">#696969</color>
+    <color name="white">#FFFFFF</color>
+    <color name="chang_white">#EBEBEB</color>
+
+    <color name="new_colorAccent">#17E1EB</color>
+    <color name="new_deep_colorAccent">#1ca3c6</color>
+
+
+    <!--血氧相关-->
+    <!--图表中的背景块的颜色，从上到下依次是血氧，心脏负荷，睡眠活动，呼吸率，低氧-->
+    <color name="block_backgroud_spo2h">#17aae2</color>
+    <color name="block_backgroud_heart">#2695f0</color>
+    <color name="block_backgroud_sleep">#6680ff</color>
+    <color name="block_backgroud_beath">#ed541f</color>
+    <color name="block_backgroud_lowspo2h">#ffc332</color>
+    <color name="block_backgroud_hrv">#ec1a3b</color>
+
+
+    <color name="spo2h_dot_spo2h_1">@color/white</color>
+    <color name="spo2h_dot_spo2h_2">#ff5232</color>
+    <color name="spo2h_dot_heart_1">#ffc719</color>
+    <color name="spo2h_dot_heart_2">@color/white</color>
+    <color name="spo2h_dot_heart_3">#ff5232</color>
+    <color name="spo2h_dot_sleep_1">@color/white</color>
+    <color name="spo2h_dot_sleep_2">#ffc332</color>
+    <color name="spo2h_dot_sleep_3">#ff5232</color>
+    <color name="spo2h_dot_beath_1">@color/white</color>
+    <color name="spo2h_dot_beath_2">#fcb437</color>
+    <color name="spo2h_dot_lowsp_1">@color/white</color>
+    <color name="spo2h_dot_lowsp_2">#ff5232</color>
+
+
+
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:id="@+id/dateSwitchLin"
+    android:layout_height="wrap_content">
+
+
+	
+	
+        <ImageView
+            android:id="@+id/rateCurrDateLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:src="@mipmap/arrow_white_left" />
+
+        <TextView
+            android:id="@+id/rateCurrdateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yyyy-MM-dd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+
+        <ImageView
+            android:id="@+id/rateCurrDateRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10"
+            android:src="@mipmap/arrow_white_right" />
+
+
+
+</LinearLayout>

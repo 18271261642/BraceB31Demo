@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/comment_title_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bloodLin"
+        app:layout_constraintTop_toBottomOf="@+id/commTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF8E0D"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/bloodV"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/commTitleLayout" />
+
+        <include layout="@layout/include_date_switch_layout" />
+
+
+        <com.brace.android.b31.view.widget.BraceCusDetailBloodView
+            android:id="@+id/cusDetailBloodView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_180"
+            android:paddingBottom="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/dateSwitchLin" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/bloodTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/chang_white"
+        android:padding="@dimen/size_5"
+        android:paddingLeft="10dp"
+        android:text="@string/string_blood_detail"
+        android:textColor="@color/contents_text"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/bloodLin" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bloodDetailRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/bloodTv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

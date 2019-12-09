@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="brace_db_table" />
+    <version value="1"/>
+
+
+    <list>
+        <mapping class="com.brace.android.b31.bean.BraceCommB31Db"/>
+        <mapping class="com.brace.android.b31.spo2andhrv.model.B31Spo2hBean"/>
+        <mapping class="com.brace.android.b31.spo2andhrv.model.B31HRVBean"/>
+
+    </list>
+
+</litepal>
