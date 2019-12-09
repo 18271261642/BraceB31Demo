@@ -13,13 +13,13 @@
 
 三，具体使用：</br>
   1，新建自己工程的Application，如果已有，则 exetends BaseApplication 即可，BaseApplication为BraceB31中的application，最后在AndroidManifest.xml文件
-  中application标签下配置 自己的Application；</br>
+  中application标签下配置 自己的Application；</br></br>
   2，设置目标步数、用户信息等资料，该资料保存在SharedPreferences 文件中，在连接设备前调用以下两个方法即可；</br>
         //设置目标步数
         SpUtils.setParam(OwnScanActivity.this,Constant.DEVICE_SPORT_GOAL,10000);
         //设置用户信息 性别、身高、体重、年龄
-        BleConnDataOperate.getBleConnDataOperate().setBasicMsgData(0,175,60,25)
-  3，搜索设备，已有自己的搜索页面或者我自己的搜索页面
+        BleConnDataOperate.getBleConnDataOperate().setBasicMsgData(0,175,60,25)</br></br>
+  3，搜索设备，已有自己的搜索页面或者我自己的搜索页面</br>
     不使用自己的搜索页面：
       直接Intent ScanActivity.java 即可打开搜索页面搜索设备，搜索到设备后点击绑定即可；
     使用自己的搜索页面：
