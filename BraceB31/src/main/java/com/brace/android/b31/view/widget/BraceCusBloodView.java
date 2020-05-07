@@ -83,13 +83,6 @@ public class BraceCusBloodView extends View {
     private SparseArray<Integer> bpSparryLt = new SparseArray<>();
 
 
-    /**
-     * 时间刻度
-     */
-    private final String[] timeStr = new String[]{"00:00", "03:00", "06:00", "09:00", "12:00",
-            "15:00", "18:00", "21:00", "23:59"};
-
-
     //血压的值map保存
     private List<Map<Integer, Integer>> bpMapV = new ArrayList<>();
 
@@ -222,13 +215,13 @@ public class BraceCusBloodView extends View {
 
             for (int i = 0; i < interval; i++) {
                 String timeTxt = bpTimeV.get(i == 5 ? 11 : i * 2);
-                canvas.drawText(timeTxt, mCurrWidth * (i == 5 ? 11 : i * 2) + (getTextWidth(timePaint, timeTxt) / 2) + dp2px(2), 0, timePaint);
+                canvas.drawText(timeTxt, mCurrWidth * (i == 5 ? 11 : i * 2) + (getTextWidth(timePaint, timeTxt) / 2) + dp2px(4), 0, timePaint);
             }
 
         } else {
             for (int i = 0; i < bpTimeV.size(); i++) {
                 String timeTxt = bpTimeV.get(i);
-                canvas.drawText(timeTxt, mCurrWidth * i + (getTextWidth(timePaint, timeTxt) / 2) + dp2px(2), 0, timePaint);
+                canvas.drawText(timeTxt, mCurrWidth * i + (getTextWidth(timePaint, timeTxt) / 2) + dp2px(4), 0, timePaint);
             }
         }
 
@@ -393,8 +386,8 @@ public class BraceCusBloodView extends View {
      * @param text
      * @return
              */
-    private int getTextWidth(Paint paint, String text) {
-        return (int) paint.measureText(text);
+    private float getTextWidth(Paint paint, String text) {
+        return  paint.measureText(text);
     }
 
 }

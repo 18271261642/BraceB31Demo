@@ -159,7 +159,6 @@ public class BleMessageAlertService extends CusNotificationListenerService {
             boolean isOpenLine = (boolean) SpUtils.getParam(BaseApplication.getBaseApplication(), Constant.ISLINE,false);
             if(isOpenLine)
                 sendToDeviceMsg(ESocailMsg.LINE,"line",msgCont);
-
             return;
         }
 

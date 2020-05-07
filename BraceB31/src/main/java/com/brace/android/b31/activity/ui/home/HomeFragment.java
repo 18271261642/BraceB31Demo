@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -105,6 +106,14 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
     WaveProgress b31ProgressBar;
     TextView goalStepTv;
 
+    //血氧布局
+    FrameLayout homeSpo2Frame;
+    //hrv布局
+    FrameLayout homeHrvFrame;
+    //血压布局
+    LinearLayout cusBloadLin;
+
+
     //心率图表
     BraceCusHeartView cusHeartChart;
     //睡眠图表
@@ -134,7 +143,7 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
 
     //点击
     View stepViewV,b31HrvView,b31BpOxyLin;
-    LinearLayout cusBloadLin,cusSleepLin,cusHeartLin;
+    LinearLayout cusSleepLin,cusHeartLin;
 
     //血压的集合map，key : 时间；value : 血压值map
     private List<Map<String, Map<Integer, Integer>>> resultBpMapList;
@@ -142,9 +151,6 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
 
     //运动步数的list
     private List<Integer> sportList;
-
-    //获取血氧和HRV
-    private ReadSpo2AndHrvAsyTask readSpo2AndHrvAsyTask;
 
 
     //目标步数
@@ -261,6 +267,9 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
         cusSleepLin = view.findViewById(R.id.cusSleepLin);
         cusHeartLin = view.findViewById(R.id.CusHeartLin);
 
+        homeSpo2Frame = view.findViewById(R.id.homeSpo2Frame);
+        homeHrvFrame = view.findViewById(R.id.homeHrvFrame);
+
         stepViewV.setOnClickListener(this);
         b31HrvView.setOnClickListener(this);
         cusBloadLin.setOnClickListener(this);
@@ -281,6 +290,15 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
 
         b31ProgressBar.setMaxValue(goalStep);
         b31ProgressBar.setValue(0);
+
+        //是否支持血氧和HRV
+        boolean isSupportSpo2 = (boolean) SpUtils.getParam(getmContext(),Constant.IS_SUPPORT_SPO2,false);
+        homeSpo2Frame.setVisibility(isSupportSpo2?View.VISIBLE : View.GONE);
+        homeHrvFrame.setVisibility(isSupportSpo2 ? View.VISIBLE : View.GONE);
+
+        //是否支持血压
+        boolean isSupportBp = (boolean) SpUtils.getParam(getmContext(),Constant.IS_SUPPORT_BP,false);
+        cusBloadLin.setVisibility(isSupportBp ? View.VISIBLE : View.GONE);
 
     }
 
@@ -719,17 +737,6 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
     public void dataReadComplete() {
         Log.e(TAG, "-------数据读取完了------");
         updatePagerData();
-
-        if (readSpo2AndHrvAsyTask != null && readSpo2AndHrvAsyTask.getStatus() == AsyncTask.Status.RUNNING) {
-            readSpo2AndHrvAsyTask.cancel(true);
-            readSpo2AndHrvAsyTask = null;
-            readSpo2AndHrvAsyTask = new ReadSpo2AndHrvAsyTask();
-        } else {
-            readSpo2AndHrvAsyTask = new ReadSpo2AndHrvAsyTask();
-        }
-        readSpo2AndHrvAsyTask.execute();
-
-
     }
 
 

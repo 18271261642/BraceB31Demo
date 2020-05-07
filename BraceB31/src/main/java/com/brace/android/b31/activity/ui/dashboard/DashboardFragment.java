@@ -150,8 +150,6 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
         b31DeviceClearDataRel = v.findViewById(R.id.b31DeviceClearDataRel);
 
 
-
-
         commentTitleTv.setText(getResources().getString(R.string.string_device));
 
         b31DeviceMsgRel.setOnClickListener(this);
@@ -171,6 +169,15 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
         b31DeviceClearDataRel.setOnClickListener(this);
         b31DisConnBtn.setOnClickListener(this);
         b31DeviceAlarmRel.setOnClickListener(this);
+
+
+        //是否支持倒计时
+        boolean isSupportCountDowm = (boolean) SpUtils.getParam(getContext(),Constant.IS_SUPPORT_COUNT_DOWM,false);
+        b31DeviceCounDownRel.setVisibility(isSupportCountDowm ? View.VISIBLE : View.GONE);
+
+        //是否支持血压
+        boolean isSupportBp = (boolean) SpUtils.getParam(getContext(),Constant.IS_SUPPORT_BP,false);
+        b31sDevicePrivateBloadRel.setVisibility(isSupportBp ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -291,7 +298,7 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(BleConnStatus.CONNDEVICENAME == null){
+        if(BleConnStatus.CONNDEVICENAME == null && v.getId() != R.id.b31DisConnBtn){
             ToastUtil.showShort(getActivity(),getResources().getString(R.string.string_device_no_conn));
             return;
         }

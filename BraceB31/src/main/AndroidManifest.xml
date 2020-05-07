@@ -64,8 +64,10 @@
         <activity android:name=".activity.ui.DeviceStyleActivity"/>
         <!--步数详细页面-->
         <activity android:name=".activity.StepDetailActivity"/>
-
-
+        <!--手动测量心率页面-->
+        <activity android:name=".activity.ManmualHeartActivity"/>
+        <!--手动测量血压页面-->
+        <activity android:name=".activity.ManmualBloodActivity"/>
 
         <service android:name=".ble.BleConnStatusService" />
 

@@ -158,12 +158,14 @@ public class TrunWristSetActivity extends BaseActivity implements CompoundButton
         commentTitleTv = findViewById(R.id.commentTitleTv);
         turnWristToggleBtn = findViewById(R.id.turnWristToggleBtn);
         b31TrunWristStartTv = findViewById(R.id.b31TrunWristStartTv);
+        b31TrunWristendTv = findViewById(R.id.b31TrunWristendTv);
         showSeekBarValueTv = findViewById(R.id.showSeekBarValueTv);
         b31TrunWristSeekBar = findViewById(R.id.b31TrunWristSeekBar);
         b31DeviceWristRel = findViewById(R.id.b31DeviceWristRel);
         b31WristStartRel = findViewById(R.id.b31WristStartRel);
         b31WristEndRel = findViewById(R.id.b31WristEndRel);
         b31TrunWristSaveBtn = findViewById(R.id.b31TrunWristSaveBtn);
+
 
         commentackImg.setVisibility(View.VISIBLE);
         commentTitleTv.setText(getResources().getString(R.string.string_turning_wrist_screen));
@@ -180,15 +182,17 @@ public class TrunWristSetActivity extends BaseActivity implements CompoundButton
     private void saveTrunWristData() {
         //起始时间
         String startD = b31TrunWristStartTv.getText().toString().trim();
+        String endD = b31TrunWristendTv.getText().toString().trim();
         //int startHour = DateTimeUtils.getc
         if(BraceUtils.isEmpty(startD))
             return;
-
+        if(BraceUtils.isEmpty(endD))
+            return;
         int startHour = Integer.valueOf(StringUtils.substringBefore(startD, ":").trim());
         int startMine = Integer.valueOf(StringUtils.substringAfter(startD, ":").trim());
 
         final TimeData startTime = new TimeData(startHour, startMine);
-        String endD = b31TrunWristendTv.getText().toString().trim();
+
         int endHour = Integer.valueOf(StringUtils.substringBefore(endD, ":").trim());
         int endMine = Integer.valueOf(StringUtils.substringAfter(endD, ":").trim());
         final TimeData endTime = new TimeData(endHour, endMine);

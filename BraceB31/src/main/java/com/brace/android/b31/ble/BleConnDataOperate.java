@@ -20,6 +20,7 @@ import com.brace.android.b31.bean.CusVPTimeData;
 import com.brace.android.b31.bean.SportBasicData;
 import com.brace.android.b31.constant.Constant;
 import com.brace.android.b31.spo2andhrv.bpoxy.uploadSpo2.AnalysisSpo2DataTask;
+import com.brace.android.b31.spo2andhrv.bpoxy.uploadSpo2.ReadSpo2AndHrvAsyTask;
 import com.brace.android.b31.utils.BraceUtils;
 import com.brace.android.b31.utils.SpUtils;
 import com.brace.android.b31.view.ConnBleOperListener;
@@ -61,6 +62,7 @@ import com.veepoo.protocol.model.datas.SleepPrecisionData;
 import com.veepoo.protocol.model.datas.Spo2hOriginData;
 import com.veepoo.protocol.model.datas.SportData;
 import com.veepoo.protocol.model.datas.TimeData;
+import com.veepoo.protocol.model.enums.EFunctionStatus;
 import com.veepoo.protocol.model.enums.ELanguage;
 import com.veepoo.protocol.model.enums.EOprateStauts;
 import com.veepoo.protocol.model.enums.EPwdStatus;
@@ -99,6 +101,9 @@ public class BleConnDataOperate {
     //第一代为0，不支持精准睡眠；支持精准睡眠的为3
     int deviceVersion = 0;
 
+    //是否支持血氧和HRV功能
+    private boolean isSupportSpo2 = false;
+
     private OnDataCompleteListener onDataCompleteListener;
 
 
@@ -112,7 +117,7 @@ public class BleConnDataOperate {
     //处理spo2数据
     private AnalysisSpo2DataTask analysisSpo2DataTask;
 
-
+    private ReadSpo2AndHrvAsyTask readSpo2AndHrvAsyTask;
 
 
     private BleConnDataOperate() {
@@ -169,11 +174,7 @@ public class BleConnDataOperate {
         }, new IDeviceFuctionDataListener() {   //设备支持的功能
             @Override
             public void onFunctionSupportDataChange(FunctionDeviceSupportData functionDeviceSupportData) {
-                deviceVersion = functionDeviceSupportData.getOriginProtcolVersion();
-                int deviceStyleCoount = functionDeviceSupportData.getScreenstyle();
-                SpUtils.setParam(BaseApplication.getBaseApplication(), Constant.SP_DEVICE_STYLE_COUNT,deviceStyleCoount);
-                SpUtils.setParam(BaseApplication.getBaseApplication(), Constant.DEVICE_VERSION_KEY,deviceVersion);
-
+                getCommData(functionDeviceSupportData);
             }
         }, new ISocialMsgDataListener() {   //消息提醒开关状态
             @Override
@@ -212,10 +213,8 @@ public class BleConnDataOperate {
         }, new IDeviceFuctionDataListener() {   //设备支持的功能
             @Override
             public void onFunctionSupportDataChange(FunctionDeviceSupportData functionDeviceSupportData) {
-                deviceVersion = functionDeviceSupportData.getOriginProtcolVersion();
-                int deviceStyleCoount = functionDeviceSupportData.getScreenstyle();
-                SpUtils.setParam(BaseApplication.getBaseApplication(), Constant.SP_DEVICE_STYLE_COUNT,deviceStyleCoount);
-                SpUtils.setParam(BaseApplication.getBaseApplication(), Constant.DEVICE_VERSION_KEY,deviceVersion);
+                getCommData(functionDeviceSupportData);
+
             }
         }, new ISocialMsgDataListener() {   //消息提醒开关状态
             @Override
@@ -229,6 +228,28 @@ public class BleConnDataOperate {
             }
         },pwd,true);
     }
+
+    private void getCommData(FunctionDeviceSupportData functionDeviceSupportData){
+        Context context = BaseApplication.getBaseApplication();
+        deviceVersion = functionDeviceSupportData.getOriginProtcolVersion();
+        int deviceStyleCoount = functionDeviceSupportData.getScreenstyle();
+        SpUtils.setParam(context, Constant.SP_DEVICE_STYLE_COUNT,deviceStyleCoount);
+        SpUtils.setParam(context, Constant.DEVICE_VERSION_KEY,deviceVersion);
+        //是否支持血氧
+        isSupportSpo2 = functionDeviceSupportData.getSpo2H() == EFunctionStatus.SUPPORT;
+        SpUtils.setParam(context,Constant.IS_SUPPORT_SPO2,isSupportSpo2);
+
+        //是否支持倒计时
+        SpUtils.setParam(context,Constant.IS_SUPPORT_COUNT_DOWM,functionDeviceSupportData.getCountDown() == EFunctionStatus.SUPPORT);
+        //是否支持血压
+        SpUtils.setParam(context,Constant.IS_SUPPORT_BP,functionDeviceSupportData.getBp() == EFunctionStatus.SUPPORT);
+
+
+
+
+
+    }
+
 
 
     public void  disBleConn(){
@@ -664,8 +685,8 @@ public class BleConnDataOperate {
         public void onOriginSpo2OriginListDataChange(List<Spo2hOriginData> list) {
             if(analysisSpo2DataTask != null && analysisSpo2DataTask.getStatus() == AsyncTask.Status.RUNNING){
                 analysisSpo2DataTask.cancel(true);
+                analysisSpo2DataTask = null;
                 analysisSpo2DataTask = new AnalysisSpo2DataTask();
-                analysisSpo2DataTask.execute(list);
             }else{
                 analysisSpo2DataTask = new AnalysisSpo2DataTask();
             }
@@ -725,8 +746,26 @@ public class BleConnDataOperate {
         public void onReadOriginComplete() {
             if(onDataCompleteListener != null)
                 onDataCompleteListener.dataReadComplete();
+            if(isSupportSpo2){
+                readSpo2Data();
+            }
         }
     };
+
+    private void readSpo2Data() {
+        try {
+            if(readSpo2AndHrvAsyTask != null && readSpo2AndHrvAsyTask.getStatus() == AsyncTask.Status.RUNNING){
+                readSpo2AndHrvAsyTask.cancel(true);
+                readSpo2AndHrvAsyTask = null;
+                readSpo2AndHrvAsyTask = new ReadSpo2AndHrvAsyTask();
+            }else{
+                readSpo2AndHrvAsyTask = new ReadSpo2AndHrvAsyTask();
+            }
+            readSpo2AndHrvAsyTask.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
     //保存健康数据

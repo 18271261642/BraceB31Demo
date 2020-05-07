@@ -83,8 +83,6 @@ public class BleConnStatusService extends Service {
     };
 
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();

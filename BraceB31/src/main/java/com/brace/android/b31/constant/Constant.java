@@ -91,6 +91,7 @@ public class Constant {
      */
     public static final String DB_TYPE_SPTES = "db_type_steps";
 
+
     /**
      * 普通睡眠
      */
@@ -102,6 +103,12 @@ public class Constant {
 
     //设备支持的主题风格数量key
     public static final String SP_DEVICE_STYLE_COUNT = "sp_device_style_count";
+    //是否支持血氧和HRV
+    public static final String IS_SUPPORT_SPO2 = "is_support_spo2";
+    //是否支持倒计时
+    public static final String IS_SUPPORT_COUNT_DOWM = "is_support_count_dowm";
+    //是否支持血压
+    public static final String IS_SUPPORT_BP = "is_support_bp";
 
 
 

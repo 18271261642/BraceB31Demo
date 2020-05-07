@@ -217,4 +217,19 @@ public class BraceUtils {
         return b1.multiply(b2).doubleValue();
     }
 
+    //设备端正在使用此功能，中英文
+    public static String setBusyDesicStr() {
+        String locals = Locale.getDefault().getLanguage();
+        if (!isEmpty(locals)) {
+            if (locals.equals("zh")) {
+                return "设备端正在使用测量功能";
+            } else {
+                return "measurement in process at device side";
+            }
+        } else {
+            return "measurement in process at device side";
+        }
+
+    }
+
 }
