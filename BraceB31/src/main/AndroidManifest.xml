@@ -68,6 +68,12 @@
         <activity android:name=".activity.ManmualHeartActivity"/>
         <!--手动测量血压页面-->
         <activity android:name=".activity.ManmualBloodActivity"/>
+        <!--手动测量呼吸率页面-->
+        <activity android:name=".activity.ManmualRespiratoryRateActivity"/>
+        <!--血氧校准-->
+        <activity android:name=".activity.ManualSpo2Activity"/>
+        <!--疲劳度页面-->
+        <activity android:name=".activity.ManmualFitActivity"/>
 
         <service android:name=".ble.BleConnStatusService" />
 

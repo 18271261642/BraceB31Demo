@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.brace.android.b31.BaseApplication;
 import com.brace.android.b31.R;
+import com.brace.android.b31.ble.BleConnStatus;
 import com.brace.android.b31.utils.BraceUtils;
 import com.veepoo.protocol.listener.base.IBleWriteResponse;
 import com.veepoo.protocol.listener.data.IHeartDataListener;
@@ -106,8 +107,16 @@ public class ManmualHeartActivity extends BaseActivity implements View.OnClickLi
         super.onStop();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(BleConnStatus.CONNDEVICENAME != null)
+            b30StopDetchHeart();
+    }
+
     private void startOrStopManmual() {
         if(!isManmual){ //开始测量
+            isManmual = true;
             b31MeaureHeartValueTv.setText("");
             startImg.setImageResource(R.drawable.detect_heart_pause);
             startAllAnimat(b31ScaleLin, b31cirImg);

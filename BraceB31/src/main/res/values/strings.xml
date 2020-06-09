@@ -3,7 +3,22 @@
 
     <string name="app_name">BraceB31Project</string>
 
-
+    <string name="fatigue_normal">In good condition</string>
+    <string name="fatigue_mild">Mild fatigue</string>
+    <string name="fatigue_moderate">Moderate fatigue</string>
+    <string name="fatigue_severe">Severe fatigue</string>
+    <string name="fatigue_noral_suggest">Your energy is full, you don\'t feel tired, your concentration is high, and your work efficiency is very high.</string>
+    <string name="fatigue_mild_suggest">You are slightly tired and uncomfortable. You can usually listen to some of your favorite music to ease it.</string>
+    <string name="fatigue_moderate_suggest">You may have feelings of drowsiness, fatigue, dizziness, body stiffness, etc. You can look at the distant scenery or take a nap, relieve fatigue and prepare for efficient work.</string>
+    <string name="fatigue_sebere_suggest">You may not be able to concentrate, especially sleepy. Usually pay more attention to rest, drink plenty of water, keep your mind relaxed, your body and mind are relaxed, and your work efficiency will be high.</string>
+    <string name="calibrating">calibrating</string>
+    <string name="try_again">Please wear a bracelet and try again.</string>
+    <string name="string_normal">Normal</string>
+    <string name="string_wear_properlay">Please wear properly</string>
+    <string name="string_spo2_no_normal">Caveat! Blood oxygen is much lower than normal!</string>
+    <string name="string_spo2_lowest">Blood oxygen concentration is low, please pay attention!</string>
+    <string name="string_spo2_low">Low blood oxygen concentration</string>
+    <string name="string_spo2_concent">Blood oxygen concentration</string>
     <string name="string_max_steps">最大步数:</string>
     <string name="step_number">步数</string>
     <string name="steps">步</string>

@@ -337,10 +337,21 @@ public class CustomCircleProgressBar extends View {
         return progress;
     }
 
+    //加锁保证线程安全,能在线程中使用
+    public synchronized void setProgress(int progress) {
+        if (progress < 0) {
+            throw new IllegalArgumentException("progress should not be less than 0");
+        }
+        if (progress > maxProgress) {
+            progress = maxProgress;
+        }
+        this.progress = progress;
+        postInvalidate();
+    }
 
 
     //加锁保证线程安全,能在线程中使用
-    public synchronized void setProgress(int progress) {
+    public synchronized void setProgressForDuring(int progress) {
         if (progress < 0) {
             throw new IllegalArgumentException("progress should not be less than 0");
         }
@@ -366,7 +377,7 @@ public class CustomCircleProgressBar extends View {
             }
         });
         animator.setStartDelay(500);
-        animator.setDuration(dur * 2);
+        animator.setDuration(dur);
         animator.setInterpolator(new LinearInterpolator());
         animator.start();
     }

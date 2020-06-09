@@ -70,6 +70,8 @@
 
 
 
+            <include layout="@layout/include_manual_layout"/>
+
             <include layout="@layout/include_layout_step_layout"/>
 
 

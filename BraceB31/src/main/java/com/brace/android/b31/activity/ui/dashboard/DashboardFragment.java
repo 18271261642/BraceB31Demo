@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.brace.android.b31.BaseApplication;
@@ -42,6 +43,7 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
     View root;
     //标题
     TextView commentTitleTv;
+    ImageView commBackImg;
     TextView b31DeviceSportGoalTv;
     TextView b31DeviceSleepGoalTv;
     TextView b31DeviceUnitTv;
@@ -126,6 +128,7 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
     }
 
     private void initViews(View v) {
+        commBackImg = v.findViewById(R.id.commentackImg);
         b31DisConnBtn = v.findViewById(R.id.b31DisConnBtn);
         commentTitleTv = v.findViewById(R.id.commentTitleTv);
         b31DeviceSportGoalTv = v.findViewById(R.id.b31DeviceSportGoalTv);
@@ -151,6 +154,7 @@ public class DashboardFragment extends LazyFragment implements View.OnClickListe
 
 
         commentTitleTv.setText(getResources().getString(R.string.string_device));
+        commBackImg.setVisibility(View.GONE);
 
         b31DeviceMsgRel.setOnClickListener(this);
         b31DeviceAlarmRel = v.findViewById(R.id.b31DeviceAlarmRel);

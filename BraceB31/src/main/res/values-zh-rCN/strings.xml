@@ -1,9 +1,23 @@
 <resources>
 
-
     <string name="app_name">BraceB31Project</string>
 
 
+    <string name="fatigue_normal">状态良好</string>
+    <string name="fatigue_mild">轻度疲劳</string>
+    <string name="fatigue_moderate">中度疲劳</string>
+    <string name="fatigue_severe">重度疲劳</string>
+    <string name="fatigue_noral_suggest">您的精力充沛,无疲乏感觉,注意力集中,工作效率会非常高</string>
+    <string name="fatigue_mild_suggest">您略有疲乏不适感,平时可以多听一些自己喜欢的音乐来进行缓解。</string>
+    <string name="fatigue_moderate_suggest">您可能有困倦疲乏、头晕脑胀、身体僵硬等感觉，您可以看看远处风景或小憩片刻，缓解疲劳同时为高效工作做准备</string>
+    <string name="fatigue_sebere_suggest">您可能无法集中注意力，特别困乏，平时要多注意休息，多喝水，保持心情舒畅，身心轻松，工作效率才会高。</string>
+    <string name="calibrating">校准中</string>
+    <string name="try_again">请佩戴好手环，并重试.</string>
+    <string name="string_normal">正常</string>
+    <string name="string_spo2_no_normal">警告！血氧远低于正常值！</string>
+    <string name="string_spo2_lowest">血氧浓度偏低,请重视!</string>
+    <string name="string_spo2_low">血氧浓度偏低</string>
+    <string name="string_spo2_concent">血氧浓度</string>
     <string name="string_max_steps">最大步数:</string>
     <string name="step_number">步数</string>
     <string name="steps">步</string>

@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +26,11 @@ import com.brace.android.b31.BaseApplication;
 import com.brace.android.b31.R;
 import com.brace.android.b31.activity.BloodDetailActivity;
 import com.brace.android.b31.activity.HeartDetailActivity;
+import com.brace.android.b31.activity.ManmualBloodActivity;
+import com.brace.android.b31.activity.ManmualFitActivity;
+import com.brace.android.b31.activity.ManmualHeartActivity;
+import com.brace.android.b31.activity.ManmualRespiratoryRateActivity;
+import com.brace.android.b31.activity.ManualSpo2Activity;
 import com.brace.android.b31.activity.SleepDetailActivity;
 import com.brace.android.b31.activity.SleepPrecisionDetailActivity;
 import com.brace.android.b31.activity.StepDetailActivity;
@@ -103,6 +109,7 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
 
     View root;
     TextView commentTitleTv;
+    ImageView commBackImg;
     WaveProgress b31ProgressBar;
     TextView goalStepTv;
 
@@ -137,6 +144,26 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
     //连接状态
     TextView homeConnStatusTv;
     TextView homeDeviceMacTTv;
+
+
+    //手动测量心率img
+    ImageView homeB31ManHeartImg;
+    //手动测量血压，部分设备不支持血压
+    LinearLayout homeBpManLin;
+    ImageView homeB31ManBpImg;
+    //手动测量血氧
+    ImageView homeB31ManBloadOxImg;
+    //手动测量呼吸率
+    ImageView homeB31ManFatigueImg;
+
+    //手动测量呼吸率
+    ImageView homeB31ManRespRateImg;
+
+
+
+
+
+
 
     private Context mContext = null;
     private Gson gson = new Gson();
@@ -239,6 +266,7 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
     }
 
     private void findViews(View view) {
+        commBackImg = view.findViewById(R.id.commentackImg);
         commentTitleTv = view.findViewById(R.id.commentTitleTv);
         b31ProgressBar = view.findViewById(R.id.b31ProgressBar);
         goalStepTv = view.findViewById(R.id.goalStepTv);
@@ -270,16 +298,33 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
         homeSpo2Frame = view.findViewById(R.id.homeSpo2Frame);
         homeHrvFrame = view.findViewById(R.id.homeHrvFrame);
 
+        homeB31ManHeartImg = view.findViewById(R.id.homeB31ManHeartImg);
+        homeBpManLin = view.findViewById(R.id.homeBpManLin);
+        homeB31ManBpImg = view.findViewById(R.id.homeB31ManBpImg);
+        homeB31ManBloadOxImg = view.findViewById(R.id.homeB31ManBloadOxImg);
+        homeB31ManFatigueImg = view.findViewById(R.id.homeB31ManFatigueImg);
+        homeB31ManRespRateImg = view.findViewById(R.id.homeB31ManRespRateImg);
+
+        commBackImg.setVisibility(View.GONE);
+
         stepViewV.setOnClickListener(this);
         b31HrvView.setOnClickListener(this);
         cusBloadLin.setOnClickListener(this);
         cusSleepLin.setOnClickListener(this);
         cusHeartLin.setOnClickListener(this);
         b31BpOxyLin.setOnClickListener(this);
-
+        homeB31ManHeartImg.setOnClickListener(this);
+        homeB31ManBpImg.setOnClickListener(this);
+        homeB31ManBloadOxImg.setOnClickListener(this);
+        homeB31ManFatigueImg.setOnClickListener(this);
+        homeB31ManRespRateImg.setOnClickListener(this);
     }
 
     private void initData() {
+        //是否支持血压
+        boolean isSupportBp = (boolean) SpUtils.getParam(getmContext(),Constant.IS_SUPPORT_BP,false);
+        homeBpManLin.setVisibility(isSupportBp ? View.VISIBLE : View.GONE);
+
         resultBpMapList = new ArrayList<>();
         sportList = new ArrayList<>();
     }
@@ -834,6 +879,16 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
             startActivity(new Intent(getmContext(), B31BpOxyAnysisActivity.class));
         } else if (id == R.id.b31HrvView) { //hrv
             startActivity(new Intent(getmContext(), B31HrvDetailActivity.class));
+        }else if(id == R.id.homeB31ManHeartImg){    //手动测量心率
+            startActivity(new Intent(getmContext(), ManmualHeartActivity.class));
+        }else if(id == R.id.homeB31ManBpImg){   //手动测量血压
+             startActivity(new Intent(getmContext(), ManmualBloodActivity.class));
+        }else if(id == R.id.homeB31ManBloadOxImg){  //手动测量血氧
+            startActivity(new Intent(getmContext(), ManualSpo2Activity.class));
+        }else if(id == R.id.homeB31ManFatigueImg){  //疲劳度检测
+            startActivity(new Intent(getmContext(), ManmualFitActivity.class));
+        }else if(id == R.id.homeB31ManRespRateImg){     //呼吸率检测
+            startActivity(new Intent(getmContext(), ManmualRespiratoryRateActivity.class));
         }
     }
 
