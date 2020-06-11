@@ -25,6 +25,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.brace.android.b31.BaseApplication;
+import com.brace.android.b31.activity.BaseActivity;
 import com.brace.android.b31.activity.BraceHomeActivity;
 import com.brace.android.b31.ble.BleConnDataOperate;
 import com.brace.android.b31.ble.BleConnStatus;
@@ -41,7 +42,7 @@ import java.util.List;
  * Created by Admin
  * Date 2019/12/9
  */
-public class OwnScanActivity extends AppCompatActivity implements OwnScanAdapter.OwnOnItemClickListener{
+public class OwnScanActivity extends BaseActivity implements OwnScanAdapter.OwnOnItemClickListener{
 
     private List<BluetoothDevice> list;
     private OwnScanAdapter adapter;
@@ -172,6 +173,7 @@ public class OwnScanActivity extends AppCompatActivity implements OwnScanAdapter
         if(bd.getName() == null || bd.getAddress() == null)
             return;
         // start 进度条
+        showLoadDialog("conn...");
         //开始连接，bleName,bleMac,pwd , pwd默认0000
         BaseApplication.getBaseApplication().getBleConnStatusService().connBleB31Device(bd.getName(),bd.getAddress(),"0000");
     }
@@ -196,13 +198,14 @@ public class OwnScanActivity extends AppCompatActivity implements OwnScanAdapter
                 return;
             if (action.equals(Constant.DEVICE_INPUT_PWD_CODE)) {  //密码错误，输入密码
                 // close 进度条
+                closeLoadDialog();
                 String bName = intent.getStringExtra("bleName");
                 String bMac = intent.getStringExtra("bleMac");
                 inputPwd(bName, bMac);
             }
             if (action.equals(Constant.DEVICE_CONNECT_ACTION)) {    //连接成功
                 // close 进度条
-
+                closeLoadDialog();
                 BleConnDataOperate.getBleConnDataOperate().syncUserInfoData();
 
                 BleConnStatus.isScannInto = true;
@@ -213,9 +216,8 @@ public class OwnScanActivity extends AppCompatActivity implements OwnScanAdapter
     };
 
 
-
+    //输入密码
     private void inputPwd(final String bleName, final String bleMac) {
-
 
         if (cusInputEditView == null)
             cusInputEditView = new CusInputEditView(OwnScanActivity.this);

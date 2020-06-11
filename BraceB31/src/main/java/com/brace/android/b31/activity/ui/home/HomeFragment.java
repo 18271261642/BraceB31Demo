@@ -160,11 +160,6 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
     ImageView homeB31ManRespRateImg;
 
 
-
-
-
-
-
     private Context mContext = null;
     private Gson gson = new Gson();
 

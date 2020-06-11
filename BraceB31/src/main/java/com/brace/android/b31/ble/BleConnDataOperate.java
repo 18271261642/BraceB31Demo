@@ -243,11 +243,6 @@ public class BleConnDataOperate {
         SpUtils.setParam(context,Constant.IS_SUPPORT_COUNT_DOWM,functionDeviceSupportData.getCountDown() == EFunctionStatus.SUPPORT);
         //是否支持血压
         SpUtils.setParam(context,Constant.IS_SUPPORT_BP,functionDeviceSupportData.getBp() == EFunctionStatus.SUPPORT);
-
-
-
-
-
     }
 
 
@@ -869,8 +864,6 @@ public class BleConnDataOperate {
         braceCommB31Db.setIsUploadStatus(0);
         braceCommB31Db.setType(Constant.DB_TYPE_BLOOD);
         BraceCommDbInstance.getBraceCommDbInstance().saveDataSoreceData(braceCommB31Db);
-
-
 
     }
 

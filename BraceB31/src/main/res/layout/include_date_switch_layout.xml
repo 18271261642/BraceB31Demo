@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/size_10"
+            android:layout_marginRight="@dimen/size_10"
             android:src="@mipmap/arrow_white_left" />
 
         <TextView
@@ -30,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/size_10"
+            android:layout_marginLeft="@dimen/size_10"
             android:src="@mipmap/arrow_white_right" />
 
 

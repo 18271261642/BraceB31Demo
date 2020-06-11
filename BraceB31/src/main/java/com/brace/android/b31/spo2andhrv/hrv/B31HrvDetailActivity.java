@@ -96,7 +96,7 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
     //点击
     ImageView commArrowLeft,commArrowRight;
     LinearLayout hrvType1,hrvType2,hrvType3,hrvType4,hrvType5,hrvType6,hrvType7,hrvType8,hrvType9;
-
+    LinearLayout dateSwitchLin;
 
 
 
@@ -121,7 +121,7 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
 
 
     @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -178,7 +178,7 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
         commentB30TitleTv = findViewById(R.id.commentTitleTv);
         //折线图
         b31HrvDetailTopChart = findViewById(R.id.b31HrvDetailTopChart);
-        commArrowDate = findViewById(R.id.commArrowDate);
+        commArrowDate = findViewById(R.id.rateCurrdateTv);
         hrvDataRrecyclerView = findViewById(R.id.hrvDataRrecyclerView);
         hrvLerozenLin = findViewById(R.id.hrvLerozenLin);
         hrvListDataConLy = findViewById(R.id.hrvListDataConLy);
@@ -186,9 +186,9 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
         herDataTv = findViewById(R.id.herDataTv);
         relaLayoutTitle = findViewById(R.id.commTitleLayout);
 
-
-        commArrowLeft = findViewById(R.id.commArrowLeft);
-        commArrowRight = findViewById(R.id.commArrowRight);
+        dateSwitchLin = findViewById(R.id.dateSwitchLin);
+        commArrowLeft = findViewById(R.id.rateCurrDateLeft);
+        commArrowRight = findViewById(R.id.rateCurrDateRight);
         commentB30BackImg = findViewById(R.id.commentackImg);
 
 
@@ -310,8 +310,7 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
         commArrowDate.setText(currDay);
         commentB30BackImg.setVisibility(View.VISIBLE);
         commentB30TitleTv.setText("HRV");
-        relaLayoutTitle.setBackgroundColor(Color.parseColor("#ECA83D"));
-
+        dateSwitchLin.setBackgroundColor(getResources().getColor(R.color.appThemeColor));
         mMarkviewHrv = new SPMarkerView(getApplicationContext(), R.layout.vpspo2h_markerview,
                 true, CHART_MIDDLE_HRV, TYPE_HRV);
         clearHrvStyle(0);
@@ -352,9 +351,9 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
         int id = view.getId();
         if (id == R.id.commentackImg) {    //返回
             finish();
-        } else if (id == R.id.commArrowLeft) {    //前一天
+        } else if (id == R.id.rateCurrDateLeft) {    //前一天
             changeCurrDay(true);
-        } else if (id == R.id.commArrowRight) {   //后一天
+        } else if (id == R.id.rateCurrDateRight) {   //后一天
             changeCurrDay(false);
         } else if (id == R.id.herLerzeoTv) {  //图表展示
             clearHrvStyle(0);

@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
     android:orientation="vertical">
 
-	
+	<android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <include layout="@layout/comment_title_layout"/>
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
 
-    <include layout="@layout/comment_date_arrow_layout"/>
+            <include layout="@layout/comment_title_layout"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <include layout="@layout/include_date_switch_layout" />
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <android.support.v4.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/ananly_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_10"
         android:fillViewport="true"
         android:scrollbars="none">
 
@@ -99,4 +112,4 @@
     </android.support.v4.widget.NestedScrollView>
 
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

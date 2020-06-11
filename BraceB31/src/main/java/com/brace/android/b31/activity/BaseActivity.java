@@ -51,12 +51,17 @@ public class BaseActivity extends AppCompatActivity {
 
 
     public void showLoadDialog(String msg){
-        if(isFinishing())
-            return;
-        if(progressDialog == null)
-            progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage(msg);
-        progressDialog.show();
+        try {
+            if(isFinishing())
+                return;
+            if(progressDialog == null)
+                progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage(msg);
+            progressDialog.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 

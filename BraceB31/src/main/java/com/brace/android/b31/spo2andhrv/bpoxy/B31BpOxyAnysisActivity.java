@@ -127,6 +127,8 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
 
     LinearLayout block_spo2h, block_heart, block_sleep, block_breath, block_lowspo2h;
 
+    //日期切换
+    LinearLayout dateSwitchLin;
 
     private List<Spo2hOriginData> list = new ArrayList<>();
 
@@ -149,7 +151,7 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
 
 
     @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -175,7 +177,6 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
         findViews();
 
         initViews();
-
 
         initTipTv();
         initChartView();
@@ -214,12 +215,12 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
         //图表的布局
         spo2ChartListLayout = findViewById(R.id.spo2ChartListLayout);
         commentShareImg = findViewById(R.id.commentShareImg);
-        commArrowDate = findViewById(R.id.commArrowDate);
+        commArrowDate = findViewById(R.id.rateCurrdateTv);
 
         spo2CommTv = findViewById(R.id.spo2CommTv);
 
-        commArrowLeft = findViewById(R.id.commArrowLeft);
-        commArrowRight = findViewById(R.id.commArrowRight);
+        commArrowLeft = findViewById(R.id.rateCurrDateLeft);
+        commArrowRight = findViewById(R.id.rateCurrDateRight);
         spo2OsahsTv = findViewById(R.id.spo2OsahsTv);
         spo2BreathStopTv = findViewById(R.id.spo2BreathStopTv);
         spo2Spo2Tv = findViewById(R.id.spo2Spo2Tv);
@@ -233,7 +234,7 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
         block_sleep = findViewById(R.id.block_sleep);
         block_breath = findViewById(R.id.block_breath);
         block_lowspo2h = findViewById(R.id.block_lowspo2h);
-
+        dateSwitchLin = findViewById(R.id.dateSwitchLin);
 
         commentB30BackImg.setOnClickListener(this);
         commentB30TitleTv.setOnClickListener(this);
@@ -284,6 +285,7 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
         commArrowDate.setText(BraceUtils.getCurrentDate());
         commentB30BackImg.setVisibility(View.VISIBLE);
         commentB30TitleTv.setText(getResources().getString(R.string.vpspo2h_spo2h) + getResources().getString(R.string.data));
+        dateSwitchLin.setBackgroundColor(getResources().getColor(R.color.appThemeColor));
         commentShareImg.setVisibility(View.VISIBLE);
         commentShareImg.setImageDrawable(getResources().getDrawable(R.drawable.ic_lin_img));
         spo2DetectToggle.setOnCheckedChangeListener(onCheckedChangeListener);
@@ -509,9 +511,9 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
                 spo2AnalyMoreLin.setVisibility(View.VISIBLE);
 
             }
-        } else if (id == R.id.commArrowLeft) {    //前一天
+        } else if (id == R.id.rateCurrDateLeft) {    //前一天
             changeCurrDay(true);
-        } else if (id == R.id.commArrowRight) {   //后一天
+        } else if (id == R.id.rateCurrDateRight) {   //后一天
             changeCurrDay(false);
         } else if (id == R.id.spo2OsahsTv) {  //OSAHS
             startSpo2Desc(OSHAHS.getValue());
