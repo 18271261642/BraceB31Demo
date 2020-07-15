@@ -1,7 +1,7 @@
 package com.brace.android.b31.spo2andhrv.bpoxy.util;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.brace.android.b31.R;

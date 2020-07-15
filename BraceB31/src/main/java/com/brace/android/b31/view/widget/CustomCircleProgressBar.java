@@ -11,7 +11,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -335,6 +335,18 @@ public class CustomCircleProgressBar extends View {
 
     public synchronized float getProgress() {
         return progress;
+    }
+
+    //根据进度绘制进度
+    public synchronized void setProgress(int progress,int tmp) {
+        if (progress < 0) {
+            throw new IllegalArgumentException("progress should not be less than 0");
+        }
+        if (progress > maxProgress) {
+            progress = maxProgress;
+        }
+        this.progress = progress;
+        postInvalidate();
     }
 
     //加锁保证线程安全,能在线程中使用

@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.util.Log;
+import androidx.annotation.Nullable;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -66,7 +66,7 @@ public class ManmualFitActivity extends BaseActivity implements View.OnClickList
             FatigueData fatigueData = (FatigueData) msg.obj;
             if (fatigueData == null)
                 return;
-            b31MeaureFaitProgressView.setProgress(fatigueData.getProgress());
+            b31MeaureFaitProgressView.setProgress(fatigueData.getProgress(),0);
             fatiCurrTv.setText(fatigueData.getProgress() + "%");
             if(fatigueData.getDeviceState() != EDeviceStatus.FREE){
                 showFaitResultTv.setText("设备端正在使用测量功能");
@@ -92,8 +92,8 @@ public class ManmualFitActivity extends BaseActivity implements View.OnClickList
     }
 
     private void initData() {
-        b31MeaureFaitProgressView.setTmpTxt(null);
         b31MeaureFaitProgressView.setMaxProgress(100);
+        b31MeaureFaitProgressView.setTmpTxt(null);
     }
 
     private void initViews() {

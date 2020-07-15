@@ -3,7 +3,7 @@ package com.brace.android.b31.activity.ui;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +17,7 @@ import com.brace.android.b31.BaseApplication;
 import com.brace.android.b31.R;
 import com.brace.android.b31.activity.BaseActivity;
 import com.brace.android.b31.ble.BleConnStatus;
+import com.brace.android.b31.utils.BraceUtils;
 import com.brace.android.b31.view.whell.widgets.ProfessionPick;
 import com.brace.android.b31.view.whell.widgets.ProvincePick;
 import com.veepoo.protocol.listener.base.IBleWriteResponse;
@@ -163,9 +164,11 @@ public class LongSitRemendActivity extends BaseActivity implements
     private void saveLongSitData() {
         if (BleConnStatus.CONNDEVICENAME != null) {
             String startD = showB31LongSitStartTv.getText().toString().trim();
+            String endD = showB30LongSitEndTv.getText().toString().trim();
+            if(BraceUtils.isEmpty(startD) || BraceUtils.isEmpty(endD))
+                return;
             int startHour = Integer.valueOf(StringUtils.substringBefore(startD, ":").trim());
             int startMine = Integer.valueOf(StringUtils.substringAfter(startD, ":").trim());
-            String endD = showB30LongSitEndTv.getText().toString().trim();
             int endHour = Integer.valueOf(StringUtils.substringBefore(endD, ":").trim());
             int endMine = Integer.valueOf(StringUtils.substringAfter(endD, ":").trim());
             //时长

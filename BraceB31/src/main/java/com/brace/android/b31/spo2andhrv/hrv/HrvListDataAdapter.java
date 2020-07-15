@@ -2,8 +2,8 @@ package com.brace.android.b31.spo2andhrv.hrv;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +70,16 @@ public class HrvListDataAdapter extends RecyclerView.Adapter<HrvListDataAdapter.
         });
 
     }
+
+    public float getItemTime(int position){
+        if(list == null || list.isEmpty())
+            return 0;
+        float hrvTime = list.get(position).get("time");
+        //去掉小数点后转int型
+        String deciBefore = StringUtils.substringBefore(hrvTime+"",".");
+        return Float.parseFloat(deciBefore);
+    }
+
 
     @Override
     public int getItemCount() {

@@ -44,18 +44,25 @@ public class ReadSpo2AndHrvAsyTask extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         readSpo2Data();
-
-        readHrvData();
         return null;
     }
 
     private void readHrvData() {
         if(bleMac == null)
             return;
+        final String where = "bleMac = ? and dateStr = ?";
+        //判断是否已经读取过
+        List<B31HRVBean> currHrvLt = LitePal.where(where,
+                bleMac, BraceUtils.getCurrentDate()).find(B31HRVBean.class);
+        if(currHrvLt != null && currHrvLt.size() == 420){
+            sendCompleteBraodCast(Constant.B31_HRV_COMPLETE);
+            return;
+        }
+
         if(b31HRVBeanList == null)
             b31HRVBeanList = new ArrayList<>();
         b31HRVBeanList.clear();
-        final String where = "bleMac = ? and dateStr = ?";
+
 
         BaseApplication.getVPOperateManager().readHRVOrigin(iBleWriteResponse, new IHRVOriginDataListener() {
             @Override
@@ -107,12 +114,19 @@ public class ReadSpo2AndHrvAsyTask extends AsyncTask<Void,Void,Void> {
     private void readSpo2Data() {
         if(bleMac == null)
             return;
+        final String where = "bleMac = ? and dateStr = ?";
+        List<B31Spo2hBean> currList = LitePal.where(where, bleMac,
+                BraceUtils.getCurrentDate()).find(B31Spo2hBean.class);
+        if(currList != null && currList.size() == 420){
+            sendCompleteBraodCast(Constant.B31_SPO2_COMPLETE);
+            readHrvData();
+            return;
+        }
+
         if(b31Spo2hBeanList == null)
             b31Spo2hBeanList = new ArrayList<>();
         b31Spo2hBeanList.clear();
 
-
-        final String where = "bleMac = ? and dateStr = ?";
 
         BaseApplication.getVPOperateManager().readSpo2hOrigin(iBleWriteResponse, new ISpo2hOriginDataListener() {
             @Override
@@ -130,7 +144,8 @@ public class ReadSpo2AndHrvAsyTask extends AsyncTask<Void,Void,Void> {
                         }
 
                     }
-
+                    sendCompleteBraodCast(Constant.B31_SPO2_COMPLETE);
+                    readHrvData();
                 }
 
             }

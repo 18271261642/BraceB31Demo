@@ -6,13 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +44,6 @@ import com.brace.android.b31.ble.BleConnDataOperate;
 import com.brace.android.b31.ble.BleConnStatus;
 import com.brace.android.b31.constant.Constant;
 import com.brace.android.b31.spo2andhrv.bpoxy.B31BpOxyAnysisActivity;
-import com.brace.android.b31.spo2andhrv.bpoxy.uploadSpo2.ReadSpo2AndHrvAsyTask;
 import com.brace.android.b31.spo2andhrv.bpoxy.util.ChartViewUtil;
 import com.brace.android.b31.spo2andhrv.hrv.B31HrvDetailActivity;
 import com.brace.android.b31.spo2andhrv.model.B31HRVBean;
@@ -228,6 +226,8 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Constant.DEVICE_CONNECT_ACTION);
         intentFilter.addAction(Constant.DEVICE_DISANCE_ACTION);
+        intentFilter.addAction(Constant.B31_SPO2_COMPLETE);
+        intentFilter.addAction(Constant.B31_HRV_COMPLETE);
         getmContext().registerReceiver(broadcastReceiver, intentFilter);
 
         goalStep = (int) SpUtils.getParam(getmContext(), Constant.DEVICE_SPORT_GOAL, 0);
@@ -853,7 +853,20 @@ public class HomeFragment extends LazyFragment implements OnCurrentCountStepsLis
                 homeConnStatusTv.setText(getResources().getString(R.string.disconnted));
                 homeConnStatusTv.setTextColor(ContextCompat.getColor(getmContext(), R.color.red));
                 homeDeviceMacTTv.setText("");
+            }
 
+            if(action.equals(Constant.B31_HRV_COMPLETE)){   //显示HRV
+                String bMac = BaseApplication.getBaseApplication().getBleMac();
+                if(BraceUtils.isEmpty(bMac))
+                    return;
+                updateHrvData(bMac);
+            }
+
+            if(action.equals(Constant.B31_SPO2_COMPLETE)){
+                String bMac = BaseApplication.getBaseApplication().getBleMac();
+                if(BraceUtils.isEmpty(bMac))
+                    return;
+                updateSpo2Data(bMac);
             }
         }
     };

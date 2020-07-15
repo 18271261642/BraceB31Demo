@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -453,48 +453,6 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
 
     }
 
-    //保存文件到sd卡
-    public void saveToFile(String content) {
-        BufferedWriter out = null;
-
-        //获取SD卡状态
-        String state = Environment.getExternalStorageState();
-        //判断SD卡是否就绪
-        if (!state.equals(Environment.MEDIA_MOUNTED)) {
-//            Toast.makeText(this, "请检查SD卡", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "======请检查SD卡" );
-            return;
-        }
-        //取得SD卡根目录
-        File file = Environment.getExternalStorageDirectory();
-        try {
-            Log.e(TAG, "======SD卡根目录：" + file.getCanonicalPath());
-            if (file.exists()) {
-                Log.e(TAG, "file.getCanonicalPath() == " + file.getCanonicalPath());
-            }
-            /*
-            输出流的构造参数1：可以是File对象  也可以是文件路径
-            输出流的构造参数2：默认为False=>覆盖内容； true=>追加内容
-             */
-            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file.getCanonicalPath() + "/readMsg.txt", true)));
-            out.newLine();
-            out.write(content);
-//            Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "======保存成功" );
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
 
     private void initLinChartData(List<HRVOriginData> originHRVList) {
         closeLoadDialog();
@@ -649,7 +607,8 @@ public class B31HrvDetailActivity extends BaseActivity implements View.OnClickLi
             if (spo2SecondDialogView == null) {
                 spo2SecondDialogView = new Spo2SecondDialogView(B31HrvDetailActivity.this);
             }
-            List<Map<String, Float>> lt = mHrvOriginUtil.getDetailList(listMap.size() - position - 1);
+            float itemTime = hrvListDataAdapter.getItemTime(position);
+            List<Map<String, Float>> lt = mHrvOriginUtil.getDetailList((int) (itemTime/10));
             if (lt == null || lt.size() == 0)
                 return;
             spo2SecondDialogView.show();

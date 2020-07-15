@@ -3,7 +3,7 @@ package com.brace.android.b31.spo2andhrv.hrv;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;

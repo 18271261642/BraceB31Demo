@@ -19,9 +19,7 @@
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".activity.BraceHomeActivity">
-
-        </activity>
+        <activity android:name=".activity.BraceHomeActivity"/>
         <activity android:name=".activity.ScanActivity"/>
         <activity android:name=".MainActivity" />
         <!--心率详细页面-->

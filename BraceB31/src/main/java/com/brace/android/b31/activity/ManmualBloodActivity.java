@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.util.Log;
+import androidx.annotation.Nullable;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -64,7 +64,7 @@ public class ManmualBloodActivity extends BaseActivity implements View.OnClickLi
                 return;
             }
 
-            b31MeaureBloadProgressView.setProgress(meaureBpData.getProgress());
+            b31MeaureBloadProgressView.setProgress(meaureBpData.getProgress(),0);
             if(meaureBpData.getStatus() == EBPDetectStatus.STATE_BP_BUSY){
                 showBpStateTv.setText(BraceUtils.setBusyDesicStr());
                 stopMeaureBoload();

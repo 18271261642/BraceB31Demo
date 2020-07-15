@@ -4,11 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,7 +66,7 @@ public class ShowSpo2DetailActivity extends BaseActivity implements View.OnClick
 
 
     @SuppressLint("HandlerLeak")
-    Handler handler = new Handler(){
+    private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -127,37 +128,45 @@ public class ShowSpo2DetailActivity extends BaseActivity implements View.OnClick
 
     //查询本地保存的数据
     private void readLocalDeviceData(final String currDay){
-        commArrowDate.setText(currDay);
-        showLoadDialog("Loading...");
-        list.clear();
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                //查询保存的数据
-                String whereStr = "bleMac = ? and dateStr = ?";
-                String bleMac = BaseApplication.getBaseApplication().getBleMac();
-                List<B31Spo2hBean> spo2hBeanList = LitePal.where(whereStr, bleMac, currDay).find(B31Spo2hBean.class);
-                //Log.e(TAG,"---22------查询数据="+currDay+spo2hBeanList.size());
-                if (spo2hBeanList == null || spo2hBeanList.isEmpty()) {
+        try {
+            commArrowDate.setText(currDay);
+            showLoadDialog("Loading...");
+            list.clear();
+            Thread thread = new Thread() {
+                @Override
+                public void run() {
+                    super.run();
+                    //查询保存的数据
+                    String whereStr = "bleMac = ? and dateStr = ?";
+                    String bleMac = BaseApplication.getBaseApplication().getBleMac();
+                    if(BraceUtils.isEmpty(bleMac)){
+                        closeLoadDialog();
+                        return;
+                    }
+                    List<B31Spo2hBean> spo2hBeanList = LitePal.where(whereStr, bleMac, currDay).find(B31Spo2hBean.class);
+                    //Log.e(TAG,"---22------查询数据="+currDay+spo2hBeanList.size());
+                    if (spo2hBeanList == null || spo2hBeanList.isEmpty()) {
+                        Message message = handler.obtainMessage();
+                        message.what = 1001;
+                        message.obj = list;
+                        handler.sendMessage(message);
+                        return;
+                    }
+                    for (B31Spo2hBean hBean : spo2hBeanList) {
+                        //Log.e(TAG,"---------血氧单条数据="+hBean.toString());
+                        list.add(gson.fromJson(hBean.getSpo2hOriginData(), Spo2hOriginData.class));
+                    }
+
                     Message message = handler.obtainMessage();
                     message.what = 1001;
                     message.obj = list;
                     handler.sendMessage(message);
-                    return;
                 }
-                for (B31Spo2hBean hBean : spo2hBeanList) {
-                    //Log.e(TAG,"---------血氧单条数据="+hBean.toString());
-                    list.add(gson.fromJson(hBean.getSpo2hOriginData(), Spo2hOriginData.class));
-                }
-
-                Message message = handler.obtainMessage();
-                message.what = 1001;
-                message.obj = list;
-                handler.sendMessage(message);
-            }
-        };
-        thread.start();
+            };
+            thread.start();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -258,7 +267,8 @@ public class ShowSpo2DetailActivity extends BaseActivity implements View.OnClick
             if(spo2SecondDialogView == null){
                 spo2SecondDialogView = new Spo2SecondDialogView(ShowSpo2DetailActivity.this);
             }
-            List<Map<String, Float>> lt = spo2hOriginUtil.getDetailList(getSpo2Type(spo2Int),resultListMap.size()-position-1);
+            float itemTime = showSpo2DetailAdapter.getItemTime(position);
+            List<Map<String, Float>> lt = spo2hOriginUtil.getDetailList(getSpo2Type(spo2Int), (int) (itemTime/10));
             if(lt == null || lt.size() == 0)
                 return;
             spo2SecondDialogView.show();

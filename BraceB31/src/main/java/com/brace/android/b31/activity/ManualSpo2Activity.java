@@ -1,19 +1,17 @@
 package com.brace.android.b31.activity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.brace.android.b31.BaseApplication;
-import com.brace.android.b31.MainActivity;
 import com.brace.android.b31.R;
 import com.brace.android.b31.view.widget.CustomCircleProgressBar;
 import com.bumptech.glide.Glide;
@@ -62,7 +60,7 @@ public class ManualSpo2Activity extends BaseActivity implements View.OnClickList
                 }
 
                 if (spo2hData.getSpState() == ESPO2HStatus.OPEN && spo2hData.isChecking()) {
-                    meaureSpo2ProgressView.setProgress(spo2hData.getCheckingProgress());
+                    meaureSpo2ProgressView.setProgress(spo2hData.getCheckingProgress(),0);
                 }
 
 

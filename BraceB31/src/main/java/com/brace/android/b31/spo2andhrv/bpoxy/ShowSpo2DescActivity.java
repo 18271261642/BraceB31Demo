@@ -1,7 +1,7 @@
 package com.brace.android.b31.spo2andhrv.bpoxy;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;

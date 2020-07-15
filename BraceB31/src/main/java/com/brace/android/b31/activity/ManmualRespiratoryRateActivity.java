@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,7 +43,7 @@ public class ManmualRespiratoryRateActivity extends BaseActivity implements View
                 BreathData breathData = (BreathData) msg.obj;
                 if(breathData == null)
                     return;
-                meaureRateProgressView.setProgress(breathData.getProgressValue());
+                meaureRateProgressView.setProgress(breathData.getProgressValue(),0);
                 if(breathData.getDeviceState() != 0){
                     showRateStateTv.setText("设备端正在使用测量功能");
                     meaureRateProgressView.stopAnim();

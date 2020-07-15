@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -470,17 +470,6 @@ public class B31BpOxyAnysisActivity extends BaseActivity implements View.OnClick
         readSpo2Data(currDay);
 
     }
-
-
-//    @OnClick({R.id.commentShareImg, R.id.spo2AnalyMoreTv,
-//            R.id.commentackImg, R.id.commArrowLeft,
-//            R.id.commArrowRight, R.id.spo2OsahsTv,
-//            R.id.spo2BreathStopTv,
-//            R.id.spo2Spo2Tv, R.id.spo2BreathRateTv,
-//            R.id.spo2LowO2Tv, R.id.spo2HeartLoadTv,
-//            R.id.spo2SleepActiTv, R.id.spo2LowO2ActivityTv,
-//            R.id.spo2CommTv, R.id.block_spo2h, R.id.block_heart,
-//            R.id.block_sleep, R.id.block_breath, R.id.block_lowspo2h})
 
 
     @Override

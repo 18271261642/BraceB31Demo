@@ -1,14 +1,13 @@
 package com.brace.android.b31.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatRatingBar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatRatingBar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import com.brace.android.b31.BaseApplication;
 import com.brace.android.b31.R;
 import com.brace.android.b31.bean.BraceCommDbInstance;
@@ -17,9 +16,7 @@ import com.brace.android.b31.constant.Constant;
 import com.brace.android.b31.utils.BraceUtils;
 import com.brace.android.b31.view.widget.BraceCusSleepView;
 import com.google.gson.Gson;
-
 import org.apache.commons.lang.StringUtils;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;

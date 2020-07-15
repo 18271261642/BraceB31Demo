@@ -154,7 +154,7 @@ public class BleConnDataOperate {
 
     //验证密码操作，验证密码成功可表示连接成功，可进行数据的读取
     public void connDeviceOperate(final String pwd){
-        VPOperateManager.getMangerInstance(BaseApplication.getBaseApplication()).confirmDevicePwd(iBleWriteResponse, new IPwdDataListener() {
+        BaseApplication.getVPOperateManager().confirmDevicePwd(iBleWriteResponse, new IPwdDataListener() {
             @Override
             public void onPwdDataChange(PwdData pwdData) {      //验证密码返回
                 if(pwdData.getmStatus() == EPwdStatus.CHECK_AND_TIME_SUCCESS){  //密码验证成功
